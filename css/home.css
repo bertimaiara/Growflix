@@ -29,6 +29,14 @@
   display: none;
 }
 
+.detail-hover{
+  margin-top: 20px;
+  position: absolute;
+  width: 350px;
+  background-color: #000000;
+  padding-bottom: 20px;
+}
+
 footer {
   background-color: black;
   color: #757575;

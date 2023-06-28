@@ -2,16 +2,20 @@ const growcastItems = document.getElementById("growcast-items");
 const webinarItems = document.getElementById("webinar-items");
 const uxuiItems = document.getElementById("ux-ui-items");
 const diversosItems = document.getElementById("diversos-items");
+const iframeMovie = document.getElementById("iframe-movie");
+const movieModal = new bootstrap.Modal("#movie-modal", {
+  keyboard: false,
+});
 
 function renderGrowcast() {
-    let html = '';
-    
-    growcast.forEach(item =>{
-        html += `
+  let html = "";
+
+  growcast.forEach((item) => {
+    html += `
         <div class="col-12 col-sm-6 col-md-3 col-movie">
             <div onmouseenter="showDetail(this)" onmouseleave="closeDetail(this)">
                 <img src="${item.img}" class="img-fluid">
-                <p class="detail-movie" data-link="${item.link}" style="display: none;" onclick>
+                <p class="detail-movie" data-link="${item.link}" style="display: none;" onclick="openMovie">
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="16" height="16"
@@ -27,18 +31,18 @@ function renderGrowcast() {
                 </p>
             </div>
         </div>
-        `
-    });
-    growcastItems.innerHTML += html;
+        `;
+  });
+  growcastItems.innerHTML += html;
 }
 
 renderGrowcast();
 
 function renderWebinar() {
-    let html = '';
-    
-    webinar.forEach(item =>{
-        html += `
+  let html = "";
+
+  webinar.forEach((item) => {
+    html += `
         <div class="col-12 col-sm-6 col-md-3 col-movie">
             <div onmouseenter="showDetail(this)" onmouseleave="closeDetail(this)">
                 <img src="${item.img}" class="img-fluid">
@@ -58,18 +62,18 @@ function renderWebinar() {
                 </p>
             </div>
         </div>
-        `
-    });
-    webinarItems.innerHTML += html;
+        `;
+  });
+  webinarItems.innerHTML += html;
 }
 
 renderWebinar();
 
 function renderUxUi() {
-    let html = '';
-    
-    uxUi.forEach(item =>{
-        html += `
+  let html = "";
+
+  uxUi.forEach((item) => {
+    html += `
         <div class="col-12 col-sm-6 col-md-3 col-movie">
             <div onmouseenter="showDetail(this)" onmouseleave="closeDetail(this)">
                 <img src="${item.img}" class="img-fluid">
@@ -89,20 +93,20 @@ function renderUxUi() {
                 </p>
             </div>
         </div>
-        `
-    });
-    uxuiItems.innerHTML += html;
+        `;
+  });
+  uxuiItems.innerHTML += html;
 }
 
 renderUxUi();
 
 function renderDiversos() {
-    let html = '';
-    
-    diversos.forEach(item =>{
-        html += `
+  let html = "";
+
+  diversos.forEach((item) => {
+    html += `
         <div class="col-12 col-sm-6 col-md-3 col-movie">
-            <div onmouseenter="showDetail(this)" onmouseleave="closeDetail(this)">
+            <div onmouseenter="showDetail(this)" onmouseleave="closeDetail(this)" class>
                 <img src="${item.img}" class="img-fluid">
                 <p class="detail-movie" data-link="${item.link}" style="display: none;" onclick>
                     <svg
@@ -120,9 +124,28 @@ function renderDiversos() {
                 </p>
             </div>
         </div>
-        `
-    });
-    diversosItems.innerHTML += html;
+        `;
+  });
+  diversosItems.innerHTML += html;
 }
 
 renderDiversos();
+
+function showDetail(element) {
+  element.classList.add("detail-hover");
+  element.children[1].style.display = "block";
+}
+
+function closeDetail(element) {
+  element.classList.remove("detail-hover");
+  element.children[1].style.display = "none";
+}
+
+function openMovie(element) {
+  const link = element.getAttribute("data-link");
+  console.log(link);
+  iframeMovie.innerHTML = `
+      <iframe src="${link}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    `;
+  movieModal.show();
+}
