@@ -3,9 +3,7 @@ const webinarItems = document.getElementById("webinar-items");
 const uxuiItems = document.getElementById("ux-ui-items");
 const diversosItems = document.getElementById("diversos-items");
 const iframeMovie = document.getElementById("iframe-movie");
-const movieModal = new bootstrap.Modal("#movie-modal", {
-  keyboard: false,
-});
+const movieModal = new bootstrap.Modal("#movie-modal");
 
 function renderGrowcast() {
   let html = "";
@@ -15,7 +13,7 @@ function renderGrowcast() {
         <div class="col-12 col-sm-6 col-md-3 col-movie">
             <div onmouseenter="showDetail(this)" onmouseleave="closeDetail(this)">
                 <img src="${item.img}" class="img-fluid">
-                <p class="detail-movie" data-link="${item.link}" style="display: none;" onclick="openMovie">
+                <p class="detail-movie" data-link="${item.link}" onclick="openMovie(this)">
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="16" height="16"
@@ -46,7 +44,7 @@ function renderWebinar() {
         <div class="col-12 col-sm-6 col-md-3 col-movie">
             <div onmouseenter="showDetail(this)" onmouseleave="closeDetail(this)">
                 <img src="${item.img}" class="img-fluid">
-                <p class="detail-movie" data-link="${item.link}" style="display: none;" onclick>
+                <p class="detail-movie" data-link="${item.link}" onclick="openMovie(this)">
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="16" height="16"
@@ -77,7 +75,7 @@ function renderUxUi() {
         <div class="col-12 col-sm-6 col-md-3 col-movie">
             <div onmouseenter="showDetail(this)" onmouseleave="closeDetail(this)">
                 <img src="${item.img}" class="img-fluid">
-                <p class="detail-movie" data-link="${item.link}" style="display: none;" onclick>
+                <p class="detail-movie" data-link="${item.link}" onclick="openMovie(this)">
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="16" height="16"
@@ -108,7 +106,7 @@ function renderDiversos() {
         <div class="col-12 col-sm-6 col-md-3 col-movie">
             <div onmouseenter="showDetail(this)" onmouseleave="closeDetail(this)" class>
                 <img src="${item.img}" class="img-fluid">
-                <p class="detail-movie" data-link="${item.link}" style="display: none;" onclick>
+                <p class="detail-movie" data-link="${item.link}" onclick="openMovie(this)">
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="16" height="16"
