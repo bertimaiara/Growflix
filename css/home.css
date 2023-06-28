@@ -1,0 +1,73 @@
+.banner-home {
+  background: url(../images/growcast-01.png) center top/cover no-repeat;
+  min-height: 720px;
+}
+
+.row-home-growcast {
+  align-items: flex-end;
+  min-height: 680px;
+}
+
+#main {
+  background-color: black;
+}
+
+.link-growdev {
+  text-decoration: none;
+  font-size: 20px;
+  color: #ffffff;
+}
+
+.col-movie {
+  min-height: 230px;
+}
+
+.detail-movie {
+  color: white;
+  margin-left: 20px;
+  cursor: pointer;
+  display: none;
+}
+
+footer {
+  background-color: black;
+  color: #757575;
+  position: relative;
+}
+
+footer p {
+  color: #757575;
+}
+
+.modal-fullscreen {
+  width: 100vw;
+  max-width: none;
+  height: 100%;
+  margin: 0;
+}
+
+.modal-fullscreen .modal-content {
+  height: 100%;
+  border: 0;
+  border-radius: 0;
+}
+
+.modal-content-movie {
+  background-color: transparent;
+}
+
+.modal-header {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--bs-modal-header-padding);
+  border-bottom: var(--bs-modal-header-border-width) solid
+    var(--bs-modal-header-border-color);
+  border-top-left-radius: var(--bs-modal-inner-border-radius);
+  border-top-right-radius: var(--bs-modal-inner-border-radius);
+}
+
+.modal-header-movie {
+  border-bottom: none;
+}

@@ -1,0 +1,108 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: black;
+}
+
+#banner-initial {
+  position: fixed;
+  z-index: 1;
+  width: 100vw;
+  height: 100vh;
+}
+
+.navbar {
+  position: relative;
+  z-index: 2;
+}
+
+#growflix {
+  margin: -27px;
+  margin-left: -45px;
+}
+
+.title {
+  color: white;
+  font-size: 74px;
+  font-weight: bold;
+  position: relative;
+  z-index: 2;
+  margin-top: 5rem;
+}
+
+.subtitle {
+  color: white;
+  font-size: 25px;
+  position: relative;
+  z-index: 2;
+}
+
+p {
+  color: white;
+  font-size: 20px;
+  position: relative;
+  z-index: 2;
+}
+
+#button {
+  background-color: #e50914;
+  color: #ffffff;
+  padding: 20px 35px;
+  font-weight: 700;
+  font-size: 25px;
+  position: relative;
+  z-index: 2;
+}
+
+#button:hover{
+  background-color: #b6060f;
+}
+
+#button:active {
+  background-color: transparent;
+  border-color: blue;
+  color: blue;
+}
+
+.divider-row {
+  background-color: black;
+  position: relative;
+  z-index: 2;
+  width: auto;
+  border-bottom: 3px solid #515c6f;
+}
+
+#dia-a-dia-dev {
+  position: relative;
+  z-index: 2;
+  margin-left: 5rem;
+}
+
+.accordion-button {
+  background-color: #303030 !important;
+  color: #ffffff;
+  padding: 25px !important;
+  font-size: 26px;
+}
+
+.accordion-button::after {
+  background-image: url(../images/add.svg) !important;
+}
+
+.accordion-button:not(.collapsed) {
+  color: white;
+}
+
+footer{
+  background-color: black;
+  color: #757575;
+  position: relative;
+  z-index: 2;
+}
+
+footer p{
+  color: #757575;
+}
