@@ -18,6 +18,10 @@
   color: #ffffff;
 }
 
+.link-growdev:hover{
+  color: darkorange;
+}
+
 .col-movie {
   min-height: 230px;
 }

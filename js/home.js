@@ -17,7 +17,7 @@ function renderGrowcast() {
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="16" height="16"
-                        fill="currentColor"
+                        fill="white"
                         class="bi bi-play-circle"
                         viewBox="0 0 16 16">
                         <path
@@ -141,7 +141,6 @@ function closeDetail(element) {
 
 function openMovie(element) {
   const link = element.getAttribute("data-link");
-  console.log(link);
   iframeMovie.innerHTML = `
       <iframe src="${link}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
     `;
